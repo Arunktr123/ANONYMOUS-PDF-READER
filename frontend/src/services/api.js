@@ -1,7 +1,9 @@
 import axios from 'axios'
 
-// Use relative URL so it works via Vite proxy on any device
-const API_BASE = '/api'
+// Use Render backend URL in production, local proxy in development
+const API_BASE = import.meta.env.PROD 
+  ? 'https://anonymous-pdf-reader.onrender.com/api' 
+  : '/api'
 
 export const api = axios.create({
   baseURL: API_BASE,
