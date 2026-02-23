@@ -1,18 +1,23 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import PlainTextResponse
+from contextlib import asynccontextmanager
 import os
 from app.config import settings
 from app.database import init_db
 from app.routes import sessions, pdfs, chat
 
-# Initialize database
-init_db()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Initialize database on startup (after middleware is ready)
+    init_db()
+    yield
 
 app = FastAPI(
     title="Anonymous PDF Reader Chat",
     description="A session-based PDF reader with anonymous chat functionality",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan
 )
 
 # CORS middleware
