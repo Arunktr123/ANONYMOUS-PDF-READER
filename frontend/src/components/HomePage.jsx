@@ -46,6 +46,10 @@ export function HomePage({ onSessionCreated }) {
   return (
     <div className="home-container">
       <div className="home-card">
+        <div className="brand-header">
+          <img src="/logo.png" alt="Supernatural Logo" className="brand-logo" />
+          <span className="brand-name">SUPERNATURAL</span>
+        </div>
         <h1>📄 Anonymous PDF Chat</h1>
         <p className="subtitle">Share and discuss PDFs anonymously</p>
         
