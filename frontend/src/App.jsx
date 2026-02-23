@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { HomePage } from './components/HomePage'
 import { SessionPage } from './components/SessionPage'
+import { Analytics } from "@vercel/analytics/next"
 import './App.css'
 
 export default function App() {
