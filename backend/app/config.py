@@ -23,8 +23,8 @@ class Settings(BaseSettings):
     CORS_ORIGINS: list = [
         "http://localhost:3000", 
         "http://localhost:5173",
+        "https://anonymous-pdf-reader.vercel.app",
         "https://anonymous-pdf-sharing.vercel.app",
-        "https://*.vercel.app"
     ]
     
     class Config:
