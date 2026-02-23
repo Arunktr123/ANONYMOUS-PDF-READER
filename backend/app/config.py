@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     DATABASE_USER: str = os.getenv("DATABASE_USER", "root")
     DATABASE_PASSWORD: str = os.getenv("DATABASE_PASSWORD", "password")
     DATABASE_DB: str = os.getenv("DATABASE_DB", "pdf_chat_db")
-    DATABASE_PORT: int = int(os.getenv("DATABASE_PORT", 3306))
+    DATABASE_PORT: int = int(os.getenv("DATABASE_PORT", "3306"))
     
     # Application
     SECRET_KEY: str = os.getenv("SECRET_KEY", "your-secret-key-change-in-production")
@@ -19,8 +19,13 @@ class Settings(BaseSettings):
     UPLOAD_FOLDER: str = os.path.join(os.path.dirname(__file__), "..", "uploads")
     MAX_UPLOAD_SIZE: int = 50 * 1024 * 1024  # 50MB
     
-    # CORS
-    CORS_ORIGINS: list = ["http://localhost:3000", "http://localhost:5173"]
+    # CORS - Allow all origins in production
+    CORS_ORIGINS: list = [
+        "http://localhost:3000", 
+        "http://localhost:5173",
+        "https://anonymous-pdf-sharing.vercel.app",
+        "https://*.vercel.app"
+    ]
     
     class Config:
         env_file = ".env"
