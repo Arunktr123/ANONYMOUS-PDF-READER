@@ -1,0 +1,405 @@
+.session-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f5f7fa;
+}
+
+.session-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-info h2 {
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1.5em;
+}
+
+.session-tip {
+  color: #666;
+  font-size: 0.95em;
+}
+
+.assigned-pdf {
+  color: #666;
+  font-size: 0.95em;
+}
+
+.button-leave {
+  padding: 8px 16px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.button-leave:hover {
+  background: #c0392b;
+}
+
+.session-content {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.pdfs-panel,
+.chat-panel {
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pdfs-panel {
+  width: 30%;
+  max-width: 400px;
+}
+
+.chat-panel {
+  flex: 1;
+}
+
+.panel-header {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h3 {
+  color: #333;
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.pdf-badge {
+  background: #667eea;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.upload-area {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.upload-label {
+  display: block;
+  cursor: pointer;
+}
+
+.upload-input {
+  display: none;
+}
+
+.upload-button {
+  display: block;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.upload-button:hover {
+  transform: translateY(-2px);
+}
+
+.pdfs-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.pdf-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.pdf-item:hover {
+  background: #eef0f5;
+}
+
+.pdf-item.active {
+  background: #e8ecff;
+  border-left-color: #667eea;
+}
+
+.pdf-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pdf-name {
+  color: #333;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pdf-date {
+  color: #999;
+  font-size: 0.85em;
+  margin: 0;
+}
+
+.download-btn {
+  padding: 6px 8px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background 0.2s ease;
+}
+
+.download-btn:hover {
+  background: #e0e0e0;
+}
+
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty-message {
+  color: #999;
+  text-align: center;
+  margin: auto;
+}
+
+.message {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 4px solid #667eea;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 0.85em;
+}
+
+.message-user {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.message-time {
+  color: #999;
+}
+
+.message-text {
+  color: #333;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.message-form {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.message-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95em;
+  transition: border-color 0.2s ease;
+}
+
+.message-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.message-input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.send-button {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.send-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .session-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pdfs-panel {
+    width: 100%;
+    max-width: 100%;
+    max-height: 300px;
+  }
+
+  .chat-panel {
+    flex: 1;
+  }
+}
+
+/* Panel Section Styles */
+.panel-section {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.panel-section:last-child {
+  border-bottom: none;
+}
+
+.upload-hint {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.upload-status {
+  padding: 16px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.upload-status.success {
+  color: #27ae60;
+  background: #e8f5e9;
+}
+
+.upload-status.success p {
+  margin: 0 0 8px 0;
+}
+
+.upload-note {
+  color: #888;
+  font-size: 0.85em;
+  font-weight: normal;
+  margin-top: 8px;
+}
+
+/* Assigned PDF Card */
+.assigned-pdf-card {
+  padding: 16px;
+  text-align: center;
+}
+
+.assigned-pdf-card .pdf-info {
+  margin-bottom: 12px;
+}
+
+.assigned-pdf-card .pdf-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1em;
+  margin-bottom: 4px;
+}
+
+.assigned-pdf-card .pdf-note {
+  color: #888;
+  font-size: 0.85em;
+}
+
+.download-btn-large {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.download-btn-large:hover {
+  transform: translateY(-2px);
+}
+
+/* No Assigned PDF */
+.no-assigned-pdf {
+  padding: 20px;
+  text-align: center;
+}
+
+.no-assigned-pdf p {
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.no-assigned-pdf .hint {
+  color: #999;
+  font-size: 0.85em;
+  margin-top: 12px;
+}
+
+.request-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.request-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.request-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
